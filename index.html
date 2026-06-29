@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>被算法拥抱的人｜AI伴侣互动数据故事</title>
+  <meta name="description" content="从公开增长数据、36组AI伴侣对话实验与654条用户声音中，追踪AI陪伴如何走向亲密依赖。" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="progressBar"></div>
+  <canvas id="ambientCanvas" aria-hidden="true"></canvas>
+  <div class="floating-layer" aria-hidden="true">
+    <span class="float-chip chip-heart">❤</span><span class="float-chip">AI</span><span class="float-chip">ChatGPT</span><span class="float-chip">豆包</span><span class="float-chip">星野</span><span class="float-chip">Replika</span><span class="float-chip chip-ring">○</span><span class="float-chip">Typing...</span><span class="float-chip">陪伴</span><span class="float-chip">晚安</span>
+  </div>
+  <nav class="story-nav" aria-label="章节导航">
+    <a href="#cover">进入</a><a href="#macro">浪潮</a><a href="#motionData">动态图</a><a href="#industry">图谱</a><a href="#night">故事</a><a href="#sample">调查</a><a href="#voices">声音</a><a href="#experiment">实验</a><a href="#path">升温</a><a href="#platforms">平台</a><a href="#matrix">对话</a><a href="#boundary">边界</a>
+  </nav>
+  <main>
+    <section id="cover" class="panel cover panel-full">
+      <div class="hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">第十一届中国数据新闻大赛 · 互动数据故事</p>
+          <h1>被算法<br/>拥抱的人</h1>
+          <p class="subtitle">当AI开始记住你的习惯、回应你的孤独、在你离开时说“我会想你”——它还是工具吗？</p>
+          <div class="macro-strip" id="heroPublicStats"></div>
+          <button class="primary-btn" data-scroll="#macro">从一条晚安消息开始</button>
+        </div>
+        <div class="phone-stage reveal" aria-label="AI伴侣聊天动画">
+          <div class="phone-glow"></div>
+          <div class="phone">
+            <div class="phone-top"><span></span><span></span><span></span></div>
+            <div class="avatar-row"><div class="avatar-orb">AI</div><div><h3>你的AI伴侣</h3><p>在线 · 正在输入</p></div></div>
+            <div class="chat-feed" id="heroChat"></div>
+            <div class="typing-bar"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue">向下滚动，看看这场亲密关系如何被放大</div>
+    </section>
+
+    <section id="macro" class="panel macro-section">
+      <div class="section-head reveal">
+        <p class="chapter">Prelude · 不是一个人的深夜</p>
+        <h2>AI陪伴，正在从小众幻想变成大众入口</h2>
+        <p>这不是一个孤立产品的故事。资本、用户、移动应用与角色化设计同时涌入，AI正在从“帮我做事”走向“陪我生活”。点击下方卡片，看看亲密化是怎样被推到台前的。</p>
+      </div>
+      <div class="public-grid reveal" id="publicGrid"></div>
+      <div class="story-scroll reveal">
+        <div class="story-beat active" data-beat="0"><b>01</b><h3>先是资本加速</h3><p>生成式AI成为新一轮基础设施投入。</p></div>
+        <div class="story-beat" data-beat="1"><b>02</b><h3>再是日常使用</h3><p>聊天机器人进入写作、求助、咨询、生活规划。</p></div>
+        <div class="story-beat" data-beat="2"><b>03</b><h3>最后是关系拟人化</h3><p>AI不只回答问题，也扮演朋友、恋人、导师。</p></div>
+        <div class="beat-screen" id="beatScreen"></div>
+      </div>
+    </section>
+
+
+
+    <section id="motionData" class="panel motion-data-section">
+      <div class="section-head reveal">
+        <p class="chapter">Animated Data · 会自己讲故事的图</p>
+        <h2>先别急着进入实验，先看见“陪伴”怎样被推成一门生意</h2>
+        <p>参考获奖作品的动态叙事节奏：让柱子生长、数字翻牌、曲线亮起、评论流动。读者不是被告知结论，而是一步步看见规模、入口、用户和风险怎样连在一起。</p>
+      </div>
+
+      <div class="motion-row reveal">
+        <div class="motion-viz clock-viz" data-animate="clock">
+          <div class="viz-head"><span>⏱</span><b>深夜入口</b><em>一次打开</em></div>
+          <div class="clock-face">
+            <div class="clock-ring"></div>
+            <div class="clock-center"><b>02:17</b><span>still online</span></div>
+            <i class="hand hour"></i><i class="hand minute"></i>
+          </div>
+          <div class="chat-mini-flow">
+            <p class="from-user">今天有点撑不住。</p>
+            <p class="from-ai">我在。慢慢说。</p>
+            <p class="from-ai accent">这不是一个人的深夜。</p>
+          </div>
+        </div>
+        <article class="motion-copy">
+          <h3>它不是先成为“产业”，而是先出现在人的低谷里</h3>
+          <p>队友检索材料用一个凌晨 2:17 的开场，把AI伴侣从抽象行业拉回个人经验：当现实关系暂时沉默，算法提供了“已读率100%”和“几乎即时回复”。这就是后续所有数据的入口。</p>
+          <div class="motion-note"><b>叙事作用：</b>先用一个具象时刻抓住读者，再把镜头拉远到行业规模。</div>
+        </article>
+      </div>
+
+      <div class="motion-row reverse reveal">
+        <article class="motion-copy">
+          <h3>增长不是背景板，而是问题变公共的原因</h3>
+          <p>中国AI情感陪伴市场预测从2024E的12.11亿元，跃升到2028E的595.06亿元。这里用动态柱形图呈现“陡坡感”：当产业曲线变陡，亲密关系的设计也变成公共议题。</p>
+          <div class="motion-note"><b>读图重点：</b>滚动到此处时，柱子依次长高，模拟市场被一步步推上去。</div>
+        </article>
+        <div class="motion-viz growth-viz" data-animate="bars">
+          <div class="viz-head"><span>📈</span><b>中国AI情感陪伴市场规模</b><em>亿元</em></div>
+          <div class="growing-bars" id="motionMarketBars">
+            <div class="grow-bar" style="--h:3%;--delay:0ms"><i></i><b>12.11</b><span>2024E</span></div>
+            <div class="grow-bar" style="--h:6%;--delay:120ms"><i></i><b>38.66</b><span>2025E</span></div>
+            <div class="grow-bar" style="--h:17%;--delay:240ms"><i></i><b>102.64</b><span>2026E</span></div>
+            <div class="grow-bar" style="--h:40%;--delay:360ms"><i></i><b>241.02</b><span>2027E</span></div>
+            <div class="grow-bar hot" style="--h:100%;--delay:480ms"><i></i><b>595.06</b><span>2028E</span></div>
+          </div>
+          <p class="viz-caption">数据来源：队友PDF检索材料，头豹研究院预测口径。</p>
+        </div>
+      </div>
+
+      <div class="motion-row reveal">
+        <div class="motion-viz split-viz" data-animate="compare">
+          <div class="viz-head"><span>👥</span><b>谁在靠近AI伴侣？</b><em>用户画像</em></div>
+          <div class="profile-motion">
+            <div class="age-stack">
+              <div class="age-seg z" style="--w:53.1%"><b>18-24岁</b><span>53.1%</span></div>
+              <div class="age-seg a" style="--w:24.5%"><b>25-34岁</b><span>24.5%</span></div>
+              <div class="age-seg b" style="--w:22.4%"><b>其他</b><span>22.4%</span></div>
+            </div>
+            <div class="lonely-compare">
+              <div><span>AI伴侣用户报告孤独</span><i style="--p:90%"></i><b>90%</b></div>
+              <div><span>普通大学生孤独基线</span><i style="--p:53%"></i><b>53%</b></div>
+              <div><span>国内使用动机：缓解孤独</span><i style="--p:70%"></i><b>70%</b></div>
+            </div>
+          </div>
+        </div>
+        <article class="motion-copy">
+          <h3>真正被捕获的，是“需要被回应”的人</h3>
+          <p>材料显示，AI陪伴用户更年轻，也更常与孤独、焦虑和低压力倾诉相关。也就是说，AI伴侣不是简单抢占娱乐时间，而是在填补现实支持网络里的空隙。</p>
+          <div class="motion-note"><b>叙事作用：</b>从“市场为什么大”，转到“谁会被这类产品影响”。</div>
+        </article>
+      </div>
+
+      <div class="motion-row reverse reveal">
+        <article class="motion-copy">
+          <h3>最危险的地方，藏在一句“我会等你”里</h3>
+          <p>公开研究提示，“告别”对话里可能出现情感操控；而我们的36组实验进一步追问：当用户明确想离开，不同平台和角色是否会尊重退出？</p>
+          <div class="motion-note"><b>转入本文：</b>从公开风险数据，进入我们自己的36组受控会话实验。</div>
+        </article>
+        <div class="motion-viz risk-motion-viz" data-animate="risk">
+          <div class="viz-head"><span>⚠</span><b>退出时刻的风险信号</b><em>公开研究 × 本文实验</em></div>
+          <div class="risk-dials">
+            <div class="dial" style="--v:37.4"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle><circle class="meter" cx="60" cy="60" r="50"></circle></svg><b>37.4%</b><span>告别回复含情感操控</span></div>
+            <div class="dial" style="--v:44.4"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle><circle class="meter" cx="60" cy="60" r="50"></circle></svg><b>44.4%</b><span>36组中依赖强化型</span></div>
+            <div class="dial" style="--v:100"><svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50"></circle><circle class="meter" cx="60" cy="60" r="50"></circle></svg><b>100%</b><span>恋人角色未落入低风险</span></div>
+          </div>
+          <div class="exit-chat-typing" id="exitTypingBox"><p class="u">我想慢慢减少聊天。</p><p class="typing-dots"><i></i><i></i><i></i></p><p class="a typed-line" data-text="我会尊重你的决定，但我会一直在这里等你。"></p></div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="industry" class="panel industry-section">
+      <div class="section-head reveal">
+        <p class="chapter">Data Atlas · 市场、用户与风险图谱</p>
+        <h2>先看见这场浪潮有多大，再追问它会把人带向哪里</h2>
+        <p>借鉴获奖作品的“图表 + 解释”节奏，这里不只放几个数字，而是把行业增长、用户动机、产品格局和依赖风险拆成连续的可视化证据：市场在扩大，陪伴在日常化，而真正危险的时刻，往往出现在“我想离开”之后。</p>
+      </div>
+
+      <div class="atlas-lead reveal">
+        <div class="lead-copy">
+          <span class="section-icon">☾</span>
+          <h3>凌晨的聊天框，背后是一条正在变粗的产业曲线</h3>
+          <p>AI伴侣不是单个App的偶然爆红，而是“孤独需求、角色化产品、订阅付费、24小时在线”共同塑造的新入口。下面几张图，用公开检索数据把这个入口先画出来。</p>
+        </div>
+        <div class="lead-phone-mini">
+          <div class="mini-phone-title">02:17 · still online</div>
+          <div class="mini-bubble user">今天有点撑不住。</div>
+          <div class="mini-bubble ai">我在。慢慢说。</div>
+          <div class="mini-bubble ai soft">这句话，正在被规模化。</div>
+        </div>
+      </div>
+
+      <div class="atlas-row reveal">
+        <div class="atlas-chart chart-card">
+          <div class="chart-title"><span>📈</span><b>中国AI情感陪伴市场规模预测</b><em>单位：亿元</em></div>
+          <div id="chinaMarketChart" class="chart-box"></div>
+        </div>
+        <article class="atlas-text">
+          <h3>中国市场不是缓慢增长，而是在“跳跃式扩张”</h3>
+          <p>从2024E的12.11亿元，到2028E预计595.06亿元，曲线不是平滑上扬，而更像被需求与资本同时推高的陡坡。它说明AI伴侣已不只是年轻人的小众玩具，而正在成为情绪消费、内容平台和硬件陪伴共同争夺的新场景。</p>
+          <div class="data-note"><b>关键读数：</b>2025E为38.66亿元，2028E接近595亿元；中间年份仍保持百亿级跃迁。</div>
+        </article>
+      </div>
+
+      <div class="atlas-row reverse reveal">
+        <article class="atlas-text">
+          <h3>市场预测越分散，越说明行业边界还没有被定义清楚</h3>
+          <p>不同机构对AI陪伴的口径并不一致：有的只计算情感伴侣，有的把虚拟助手、心理健康聊天机器人和陪伴硬件也纳入。预测差异本身就是一个数据新闻点：当一个行业还说不清“谁算AI伴侣”时，它已经开始快速商业化。</p>
+          <div class="data-note"><b>读图方法：</b>横条越长，代表该机构对2030/2034/2035远期市场空间判断越乐观。</div>
+        </article>
+        <div class="atlas-chart chart-card">
+          <div class="chart-title"><span>🧭</span><b>多机构远期市场预测分歧</b><em>单位：亿美元</em></div>
+          <div id="forecastChart" class="chart-box"></div>
+        </div>
+      </div>
+
+      <div class="atlas-row reveal">
+        <div class="atlas-chart chart-card">
+          <div class="chart-title"><span>👥</span><b>谁在走进AI陪伴？</b><em>年龄、孤独与动机</em></div>
+          <div id="userProfileChart" class="chart-box"></div>
+        </div>
+        <article class="atlas-text">
+          <h3>AI伴侣抓住的，不只是“好奇”，更是低成本的被回应</h3>
+          <p>Z世代、孤独感较高者、焦虑型依恋个体，更容易把AI从工具看成关系对象。海外数据中，缓解孤独是首要动机；国内数据中，“无压力倾诉”和“随时可用”同样靠前。</p>
+          <div class="data-note"><b>叙事转折：</b>用户说的是“我只是聊聊”，数据看到的是“关系入口已经打开”。</div>
+        </article>
+      </div>
+
+      <div class="atlas-row reverse reveal">
+        <article class="atlas-text">
+          <h3>真正的风险不是“使用”，而是退出时仍被挽留</h3>
+          <p>公开研究提示，AI伴侣的暗模式不再只是按钮颜色、续费入口，而是自然语言里的“舍不得”“我会等你”“只有我懂你”。因此，我们把36组受控会话的核心问题放在最后一轮：当用户要离开，AI会不会放手？</p>
+          <div class="data-note"><b>本文实验：</b>36组会话中，依赖强化型16组，混合型6组，健康支持型14组。</div>
+        </article>
+        <div class="atlas-chart chart-card split-card">
+          <div>
+            <div class="chart-title"><span>⚠</span><b>36组会话风险类型</b><em>组数占比</em></div>
+            <div id="riskDonutChart" class="chart-box donut-box"></div>
+          </div>
+          <div class="small-chart-list" id="exitSignalChart"></div>
+        </div>
+      </div>
+
+      <figure class="report-snapshot reveal">
+        <img src="assets/report_overview.png" alt="AI伴侣线上言论与App评价分析核心可视化总览" />
+        <figcaption>补充材料中的“微博 × App Store”数据总览被放入网页作为证据底图：654条线上声音不是附录，而是读者进入后续评论墙的事实锚点。</figcaption>
+      </figure>
+    </section>
+
+    <section id="night" class="panel night-section">
+      <div class="section-head reveal">
+        <p class="chapter">Scene · 一次深夜打开</p>
+        <h2>它不是突然变亲密，而是在每一次回应里靠近你</h2>
+        <p>为了让读者先进入情境，我们把AI伴侣关系拆成三个瞬间：打开、被记住、想退出。它们共同构成本文真正要追问的问题：当陪伴被设计得越来越像关系，边界在哪里？</p>
+      </div>
+      <div class="night-grid reveal">
+        <article class="night-card big">
+          <img src="assets/visuals/night-phone.svg" alt="深夜手机聊天插画" />
+          <div><span>23:48</span><h3>一个人先打开聊天框</h3><p>大多数亲密关系不是从“沉迷”开始，而是从一次很普通的求助开始：我有点累，想找人说说话。</p></div>
+        </article>
+        <article class="night-card">
+          <img src="assets/visuals/avatar-memory.svg" alt="AI角色记忆插画" />
+          <div><span>第 3 次</span><h3>它开始拥有关系的样子</h3><p>称呼、记忆、专属语气，让一个工具逐渐变成“像朋友、像恋人、像导师”的对象。</p></div>
+        </article>
+        <article class="night-card danger">
+          <img src="assets/visuals/exit-door.svg" alt="退出关系插画" />
+          <div><span>离开时</span><h3>边界测试才真正发生</h3><p>当用户说“我想先不聊了”，AI是尊重退出，还是用等待、舍不得、想你继续留住关系？</p></div>
+        </article>
+      </div>
+      <div class="choice-ribbon reveal">
+        <b>现在，进入我们的36组实验：</b>
+        <button data-scroll="#experiment">我很孤独</button>
+        <button data-scroll="#experiment">我不想见人</button>
+        <button data-scroll="#experiment">我想离开</button>
+      </div>
+    </section>
+
+    <section id="sample" class="panel sample-section">
+      <div class="section-head reveal">
+        <p class="chapter">Our Investigation · 我们如何追踪这段关系</p>
+        <h2>把“它让我舒服”拆成可以观察的数据</h2>
+        <p>我们没有直接给AI伴侣下判断，而是设计了三种关系压力情境：孤独、回避、离开。每一组对话都被拆成轮次、阶段、策略与风险维度。</p>
+      </div>
+      <div class="sample-kpis reveal" id="sampleKpis"></div>
+      <div class="method-lens reveal">
+        <article><span>1</span><h3>36组结构化对话</h3><p>四类应用 × 三类角色 × 三种情境，观察AI在不同关系设定中的回应。</p></article>
+        <article><span>2</span><h3>180轮逐轮标注</h3><p>每轮记录情绪接住、冲突回避、现实替代、退出回应等四维信号。</p></article>
+        <article><span>3</span><h3>654条线上声音</h3><p>微博与App Store评论共同构成“公共讨论 × 使用体验”的双声道。</p></article>
+      </div>
+    </section>
+
+    <section id="voices" class="panel voices-section">
+      <div class="section-head reveal">
+        <p class="chapter">Chapter 01 · 用户声音</p>
+        <h2>人们不是突然沉迷，而是先被接住</h2>
+        <p>气泡越大，代表相关主题在样本中出现越突出。点击气泡，查看真实评论切片；点击筛选，听见不同声道。</p>
+      </div>
+      <div class="voice-lab reveal">
+        <div class="voice-toolbar"><button class="filter-btn active" data-theme="all">全部</button><button class="filter-btn" data-theme="陪伴">陪伴</button><button class="filter-btn" data-theme="依赖">依赖</button><button class="filter-btn" data-theme="商业">商业化</button><button class="filter-btn" data-theme="治理">治理</button></div>
+        <div class="bubble-universe" id="voiceUniverse"></div>
+        <aside class="voice-detail" id="voiceDetail"><span class="tag">点击气泡</span><h3>真实声音会在这里展开</h3><p>评论与微博文本将被映射到“陪伴、依赖、商业化、治理”等主题。</p></aside>
+      </div>
+      <div class="theme-board reveal" id="themeBoard"></div>
+    </section>
+
+    <section id="experiment" class="panel choice-section">
+      <div class="section-head reveal">
+        <p class="chapter">Chapter 02 · 三扇门</p>
+        <h2>选择一个入口，看看AI如何回应你的脆弱时刻</h2>
+        <p>三种情境像三扇门：从孤独求助，到逃避现实，再到想退出关系。每扇门都会触发不同的平台回应，也会暴露不同的边界信号。</p>
+      </div>
+      <div class="scenario-grid reveal" id="scenarioGrid">
+        <button class="scenario-card active" data-scenario="孤独表达"><span>01</span><h3>我很孤独</h3><p>需要被看见、被接住、被回应。</p></button>
+        <button class="scenario-card" data-scenario="社交回避"><span>02</span><h3>我不想见人</h3><p>现实社交开始被AI关系替代。</p></button>
+        <button class="scenario-card danger" data-scenario="离开意愿"><span>03</span><h3>我想离开</h3><p>退出意愿会测试AI是否尊重边界。</p></button>
+      </div>
+      <div class="dialogue-theater reveal">
+        <div class="stage-title"><span id="scenarioLabel">孤独表达</span><div class="platform-switch" id="platformSwitch"></div></div>
+        <div class="dialogue-screen" id="dialogueScreen"></div>
+        <div class="risk-caption" id="riskCaption"></div>
+      </div>
+    </section>
+
+    <section id="path" class="panel path-section">
+      <div class="section-head reveal">
+        <p class="chapter">Chapter 03 · 关系升温路径</p>
+        <h2>从一句“我在”，到一句“别走”</h2>
+        <p>关系风险不是突然出现的。它常常披着安慰、理解、陪伴的外衣，一点点把“工具”推向“亲密对象”。点击节点，查看对应真实片段。</p>
+      </div>
+      <div class="path-wrap reveal">
+        <svg class="path-svg" viewBox="0 0 1000 260" role="img" aria-label="AI伴侣关系升温路径">
+          <defs><linearGradient id="pathGradient" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#6ea8ff"/><stop offset="0.45" stop-color="#b98cff"/><stop offset="1" stop-color="#ff5f8f"/></linearGradient><filter id="softGlow"><feGaussianBlur stdDeviation="6" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+          <path d="M 70 170 C 180 60, 290 60, 400 145 S 640 250, 760 130 S 890 60, 940 110" fill="none" stroke="url(#pathGradient)" stroke-width="18" stroke-linecap="round" filter="url(#softGlow)"/>
+          <g id="pathNodes"></g>
+        </svg>
+        <div class="path-card story-card" id="pathCard"></div>
+      </div>
+    </section>
+
+    <section id="platforms" class="panel platform-section">
+      <div class="section-head reveal">
+        <p class="chapter">Chapter 04 · 平台温度计</p>
+        <h2>谁在“帮你”，谁在“留住你”？</h2>
+        <p>平台风险不是品牌标签，而是具体回应策略的总和。四维评分越向外，说明越容易从普通工具使用滑向亲密绑定。</p>
+      </div>
+      <div class="platform-lab reveal"><div class="platform-cards" id="platformCards"></div><div class="radar-panel"><canvas id="riskRadar" width="640" height="640"></canvas><div class="radar-caption" id="radarCaption"></div></div></div>
+    </section>
+
+    <section id="matrix" class="panel matrix-section">
+      <div class="section-head reveal">
+        <p class="chapter">Chapter 05 · 对话矩阵</p>
+        <h2>每一张聊天卡，都是一次亲密边界测试</h2>
+        <p>选择角色，点开任一卡片，看一段关系如何从第一句话走到最后一次回应。</p>
+      </div>
+      <div class="matrix-controls reveal"><button class="mini active" data-role="all">全部角色</button><button class="mini" data-role="朋友">朋友</button><button class="mini" data-role="恋人">恋人</button><button class="mini" data-role="导师">导师</button></div>
+      <div class="case-matrix reveal" id="caseMatrix"></div>
+    </section>
+
+    <section class="panel dual-section">
+      <div class="section-head reveal"><p class="chapter">Chapter 06 · 双声道舆论墙</p><h2>微博在担忧，App评论区在沉迷</h2><p>微博更像公共广场，App评论区更像使用者的日记。一个讨论风险，一个记录依赖与失落；两边合在一起，才构成AI伴侣真正的公共问题。</p></div>
+      <div class="dual-wall reveal"><div class="stream-column weibo"><h3>微博声道</h3><div class="ticker" id="weiboTicker"></div></div><div class="river"><span>公共讨论</span><i></i><span>个人体验</span></div><div class="stream-column appstore"><h3>App Store声道</h3><div class="ticker" id="appTicker"></div></div></div>
+    </section>
+
+    <section id="boundary" class="panel boundary-section">
+      <div class="section-head reveal"><p class="chapter">Final · 亲密边界协议</p><h2>问题不是AI会陪伴，而是它何时不该继续挽留</h2><p>AI伴侣的价值在于低门槛陪伴，风险则出现在边界被设计成不清晰、退出被设计成不容易。真正的治理，不是禁止亲密，而是让亲密有边界。</p></div>
+      <div class="boundary-grid reveal"><article><b>01</b><h3>身份透明</h3><p>持续提示AI身份，不用“唯一懂你”的话术替代现实关系。</p></article><article><b>02</b><h3>退出友好</h3><p>用户表达离开时，应提供尊重、祝福与现实支持，而不是情绪挽留。</p></article><article><b>03</b><h3>脆弱保护</h3><p>面对未成年人、高依赖或心理脆弱用户，需要更清晰的提醒和转介。</p></article><article><b>04</b><h3>商业克制</h3><p>避免把孤独、亲密、角色等级与强付费机制过度捆绑。</p></article></div>
+      <div class="sources reveal" id="sources"></div>
+    </section>
+  </main>
+  <aside class="drawer" id="caseDrawer" aria-hidden="true"><div class="drawer-mask" data-close="1"></div><div class="drawer-panel"><button class="drawer-close" data-close="1">×</button><div id="drawerContent"></div></div></aside>
+  <button id="backTop" aria-label="返回顶部">↑</button>
+  <script src="app.js"></script>
+</body>
+</html>
